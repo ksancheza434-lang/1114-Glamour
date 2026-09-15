@@ -2,7 +2,7 @@
 
 Tienda virtual desarrollada para la comercialización de productos de maquillaje y cuidado capilar, con opciones de venta al por mayor y al detal.
 
-El proyecto está desarrollado utilizando **HTML5, CSS3 y JavaScript**, con una interfaz enfocada en ofrecer una experiencia de navegación sencilla, moderna y adaptable a diferentes dispositivos.
+El proyecto está desarrollado utilizando **HTML5, css y JavaScript**, con una interfaz enfocada en ofrecer una experiencia de navegación sencilla, moderna y adaptable a diferentes dispositivos.
 
 ## Descripción
 
@@ -30,7 +30,6 @@ La tienda está dirigida tanto a clientes particulares como a clientes mayorista
 ## Tecnologías utilizadas
 
 - HTML5
-- CSS3
 - JavaScript
 
 ## Estructura del proyecto
@@ -146,9 +145,7 @@ Proyecto desarrollado como parte de un proyecto académico.
 
 - Integrante 1
 - Integrante 2
-- Integrante 3
-- Integrante 4
-- Integrante 5
+
 
 ## Licencia
 
