@@ -2,7 +2,7 @@
 
 ## 1. Información del proyecto
 
-**Nombre del proyecto:** Tienda de Maquillaje y Productos Capilares  
+**Nombre del proyecto:** Glamour
 **Tipo de proyecto:** Tienda virtual  
 **Modalidad de venta:** Al por mayor y al detal  
 **Tecnologías:** HTML5, CSS3 y JavaScript  
