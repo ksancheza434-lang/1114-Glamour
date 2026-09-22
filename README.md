@@ -51,7 +51,7 @@ tienda-maquillaje/
 └── README.md
 ```
 
-La estructura puede variar dependiendo de la organización final de los archivos del proyecto.
+La estructura actual del repositorio incluye el catálogo inicial, sus estilos, datos de productos y una prueba mínima del catálogo.
 
 ## Instalación
 
@@ -135,7 +135,7 @@ El objetivo del proyecto es crear una solución digital que facilite la comercia
 
 ## Estado del proyecto
 
-**En desarrollo.**
+**MVP inicial implementado:** catálogo responsive con seis productos y filtros por categoría. El carrito será el siguiente incremento.
 
 ## Autores
 

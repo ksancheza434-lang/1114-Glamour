@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo inicial de Glamour, tienda de maquillaje y cuidado capilar.">
+  <title>Glamour | Catálogo de belleza</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio">Glamour</a>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">Belleza al detal y al por mayor</p>
+      <h1 id="hero-title">Productos para maquillaje y cuidado capilar</h1>
+      <p>Este primer MVP permite explorar el catálogo por categoría. El carrito será el siguiente incremento del equipo.</p>
+      <a class="primary-link" href="#catalogo">Ver catálogo</a>
+    </section>
+
+    <section id="catalogo" class="catalog-section" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Catálogo inicial</p>
+          <h2 id="catalog-title">Encuentra tu producto</h2>
+        </div>
+        <p id="result-message" role="status"></p>
+      </div>
+      <div id="filters" class="filters" aria-label="Filtrar productos por categoría"></div>
+      <div id="catalog" class="catalog" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Glamour · Proyecto académico 1114</p>
+  </footer>
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
