@@ -1,45 +1,236 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Catálogo inicial de Glamour, tienda de maquillaje y cuidado capilar.">
-  <title>Glamour | Catálogo de belleza</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glamour Beauty Supply · Maquillaje y cuidado capilar</title>
+<meta name="description" content="Tienda de maquillaje y cuidado capilar al detal y al por mayor. Explora tonos, compara productos y compra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="icono" href="img/icono.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+
+
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#inicio">Glamour</a>
-    <nav aria-label="Navegación principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#catalogo">Catálogo</a>
-    </nav>
-  </header>
+<div class="promo"> Envío gratis desde <b>$150.000</b> · Usa el cupón <b>BIENVENIDA10</b> · Precios por volumen para profesionales</div>
+<header>
+  <div class="wrap hrow">
+    <a class="logo" href="#inicio" aria-label="Glowlist inicio"><span>g</span>Glamour</a>
+    <div class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Busca base, labial, champú, rizos…" aria-label="Buscar productos" autocomplete="off">
+      <div class="suggest" id="suggest"></div>
+    </div>
+    <div class="hicons">
+      <button class="ib" data-act="theme-toggle" title="Modo claro/oscuro" aria-label="Cambiar modo claro u oscuro">◐</button>
+      <button class="ib" data-act="open-custom" title="Personalizar colores" aria-label="Personalizar colores">🎨</button>
+      <button class="ib" data-act="open-orders" title="Mis pedidos" aria-label="Mis pedidos">👤</button>
+      <button class="ib" data-act="open-favs" title="Favoritos" aria-label="Favoritos">♡<span class="badge" id="favCount">0</span></button>
+      <button class="ib" data-act="open-cart" title="Carrito" aria-label="Carrito">🛍<span class="badge" id="cartCount">0</span></button>
+    </div>
+  </div>
+  <nav class="cats"><div class="wrap">
+    <button data-act="kind" data-kind="">Todo</button>
+    <button data-act="kind" data-kind="makeup">Maquillaje</button>
+    <button data-act="kind" data-kind="haircare">Cuidado capilar</button>
+    <button data-act="kind" data-kind="accessory">Accesorios</button>
+    <button data-act="pro">Profesional</button>
+    <a href="#tonos">Buscador de tonos</a>
+    <a href="#comparar">Comparador</a>
+    <a href="#mayoristas">Al por mayor</a>
+    <a href="#rutinas">Rutinas</a>
+    <a href="#faq">Ayuda</a>
+  </div></nav>
+</header>
 
-  <main id="inicio">
-    <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow">Belleza al detal y al por mayor</p>
-      <h1 id="hero-title">Productos para maquillaje y cuidado capilar</h1>
-      <p>Este primer MVP permite explorar el catálogo por categoría. El carrito será el siguiente incremento del equipo.</p>
-      <a class="primary-link" href="#catalogo">Ver catálogo</a>
-    </section>
+<main id="inicio">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Beauty supply · detal y por mayor</p>
+      <h1>El ritual que<br><i>te hace brillar.</i></h1>
+      <p class="lead">Maquillaje, tonos para cada piel y cuidado capilar profesional. Compara, elige tu tono y compra por unidad o por volumen.</p>
+      <div class="hero-btns"><a class="btn btn-p" href="#catalogo" data-act="kind" data-kind="makeup">Explorar maquillaje →</a><a class="btn btn-g" href="#catalogo" data-act="kind" data-kind="haircare">Cuidado capilar</a></div>
+      <div class="hero-stats"><div><b id="statProducts">0</b><span>productos</span></div><div><b id="statShades">0</b><span>tonos y variantes</span></div><div><b id="statCats">0</b><span>categorías</span></div></div>
+    </div>
+    <div class="hero-art">
+      <div class="arch"><img src="https://images.pexels.com/photos/7256102/pexels-photo-7256102.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=800" alt="Productos de maquillaje" onerror="this.remove()"></div>
+      <div class="float f1"><i style="background:#D29E78"></i>05 Arena · Oliva</div>
+      <div class="float f2"><i style="background:#9E1B32"></i>Cereza · Mate</div>
+      <div class="float f3">NUEVO  Glow</div>
+    </div>
+  </div>
+</section>
 
-    <section id="catalogo" class="catalog-section" aria-labelledby="catalog-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Catálogo inicial</p>
-          <h2 id="catalog-title">Encuentra tu producto</h2>
+<section class="sec wrap">
+  <div class="quick">
+    <button class="qcard" data-act="kind" data-kind="makeup"><img src="https://images.pexels.com/photos/6527699/pexels-photo-6527699.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="" onerror="this.remove()"><div><p>Rostro · ojos · labios</p><h3>Maquillaje</h3><p>Ver productos →</p></div></button>
+    <button class="qcard" data-act="kind" data-kind="haircare"><img src="https://images.pexels.com/photos/19833253/pexels-photo-19833253.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="" onerror="this.remove()"><div><p>Champú · tratamientos · rizos</p><h3>Cuidado capilar</h3><p>Ver productos →</p></div></button>
+  </div>
+</section>
+
+<section class="wrap" style="padding-bottom:40px">
+  <div class="sec-head"><div><p class="eyebrow">Categorías</p><h2>Encuentra tu <i>universo</i></h2></div></div>
+  <div class="catgrid" id="catgrid"></div>
+</section>
+
+<section class="sec wrap" style="padding-top:30px">
+  <div class="sec-head"><div><p class="eyebrow">Los favoritos</p><h2>Más vendidos</h2></div><a class="btn btn-g btn-s" href="#catalogo">Ver todo el catálogo →</a></div>
+  <div class="grid g4" id="bestsellers"></div>
+</section>
+
+<section class="sec" id="catalogo" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">Catálogo</p><h2>Todos los <i>productos</i></h2></div><span id="dataSource" class="dbflag">● Catálogo local</span></div>
+    <div class="catalog">
+      <aside class="filters" id="filters">
+        <h4>Tipo</h4>
+        <div class="pills" id="fKind"></div>
+        <h4>Categoría</h4><select id="fCat"></select>
+        <h4>Marca</h4><select id="fBrand"></select>
+        <h4>Subtono</h4><div class="pills" id="fTone"></div>
+        <h4>Acabado</h4><div class="pills" id="fFinish"></div>
+        <h4>Precio máximo: <span id="fPriceLbl"></span></h4><input type="range" id="fPrice" min="20000" max="400000" step="5000">
+        <label class="check"><input type="checkbox" id="fStock"> Solo disponibles</label>
+        <label class="check"><input type="checkbox" id="fPro"> Uso profesional</label>
+        <label class="check"><input type="checkbox" id="fShades"> Con tonos de color</label>
+        <button class="btn btn-g btn-s" style="width:100%;margin-top:10px" data-act="clear">Limpiar filtros</button>
+      </aside>
+      <div>
+        <div class="toolbar">
+          <button class="btn btn-g btn-s" id="filterToggle" style="display:none" data-act="toggle-filters">☰ Filtros</button>
+          <span class="muted" id="resultCount"></span>
+          <div class="mode" role="group" aria-label="Modalidad de compra"><button data-act="mode" data-mode="retail">Detal</button><button data-act="mode" data-mode="wholesale">Por mayor</button></div>
+          <select id="sort" aria-label="Ordenar"><option value="featured">Destacados</option><option value="price-asc">Precio: menor a mayor</option><option value="price-desc">Precio: mayor a menor</option><option value="rating">Mejor valorados</option><option value="name">Nombre A–Z</option></select>
         </div>
-        <p id="result-message" role="status"></p>
+        <div class="grid" id="grid"></div>
+        <div class="more"><button class="btn btn-g" id="moreBtn" data-act="more">Cargar más productos</button></div>
       </div>
-      <div id="filters" class="filters" aria-label="Filtrar productos por categoría"></div>
-      <div id="catalog" class="catalog" aria-live="polite"></div>
-    </section>
-  </main>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>Glamour · Proyecto académico 1114</p>
-  </footer>
-  <script type="module" src="js/script.js"></script>
+<section class="sec studio" id="tonos">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">Shade studio</p><h2>Explora y compara <i>tonos</i></h2><p class="muted">Filtra por subtono, profundidad y acabado. Selecciona hasta 4 tonos para verlos lado a lado y guarda tus favoritos.</p></div></div>
+    <div style="display:grid;gap:12px">
+      <div class="pills" id="sTone"></div>
+      <div class="pills" id="sDepth"></div>
+      <div class="pills" id="sCat"></div>
+    </div>
+    <div class="side" id="side" style="display:none"></div>
+    <div class="shadegrid" id="shadegrid"></div>
+    <div class="disclaimer">ⓘ <span>Los colores en pantalla son orientativos y pueden variar según el dispositivo, el brillo y la iluminación. No garantizan una coincidencia exacta con tu piel.</span></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="comparar">
+  <div class="sec-head"><div><p class="eyebrow">Comparador</p><h2>Compara hasta <i>4 productos</i></h2><p class="muted">Agrega productos con el botón “Comparar”. Las diferencias se resaltan. Costo por ml/g = precio ÷ contenido neto.</p></div><div style="display:flex;gap:8px"><button class="btn btn-g btn-s" data-act="share-compare">Copiar comparación</button><button class="btn btn-g btn-s" data-act="clear-compare">Vaciar</button></div></div>
+  <div id="compareBox"></div>
+</section>
+
+<section class="sec wrap" id="mayoristas" style="padding-top:20px">
+  <div class="whole">
+    <div>
+      <p class="eyebrow">Glowlist Pro</p>
+      <h2>Compra al por mayor con <i>mejores precios</i></h2>
+      <p>Escalas por cantidad en cada producto: 6, 12 y 24+ unidades. Activa el modo “Por mayor” en el catálogo para ver los precios por volumen. Las cuentas comerciales se aprueban antes de facturar.</p>
+      <div class="calc">
+        <b>Calculadora de volumen</b>
+        <div class="calc-r" style="margin-top:10px">
+          <label>Producto<select id="calcProd"></select></label>
+          <label>Cantidad<input id="calcQty" type="number" min="1" value="12"></label>
+        </div>
+        <output id="calcOut"></output>
+      </div>
+    </div>
+    <div>
+      <form id="wholesaleForm" style="padding:26px;border-radius:16px">
+        <h3>Solicita tu cuenta comercial</h3>
+        <p>Te contactaremos para validar condiciones y mínimos.</p>
+        <input name="fullName" required minlength="2" placeholder="Nombre completo">
+        <input name="email" type="email" required placeholder="Correo comercial">
+        <input name="companyName" placeholder="Empresa / salón (opcional)">
+        <input name="taxId" placeholder="NIT o identificación (opcional)">
+        <textarea name="message" rows="3" placeholder="¿Qué categorías y cantidades necesitas?"></textarea>
+        <button class="btn btn-p">Enviar solicitud</button>
+        <span id="wholesaleMsg"></span>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="rutinas" style="padding-top:20px">
+  <div class="sec-head"><div><p class="eyebrow">Colecciones</p><h2>Rutinas <i>recomendadas</i></h2></div></div>
+  <div class="routines" id="routines"></div>
+</section>
+
+<section class="wrap" style="padding:30px 0 60px">
+  <p class="eyebrow" style="text-align:center">Marcas destacadas (ficticias de demostración)</p>
+  <div class="brands" id="brands"></div>
+</section>
+
+<section class="sec wrap" style="padding-top:20px">
+  <div class="sec-head"><div><p class="eyebrow">Opiniones</p><h2>Lo que dice la <i>comunidad</i></h2></div></div>
+  <div class="reviews">
+    <div class="review"><div class="stars">★★★★★</div><p>“Poder ver los tonos lado a lado me ayudó muchísimo a elegir mi base.”</p><small class="muted">Mariana R. · reseña de demostración</small></div>
+    <div class="review"><div class="stars">★★★★★</div><p>“Para mi salón, los precios por volumen y la calculadora son clarísimos.”</p><small class="muted">Estudio Bella · reseña de demostración</small></div>
+    <div class="review"><div class="stars">★★★★☆</div><p>“El comparador de champús por precio por ml es justo lo que necesitaba.”</p><small class="muted">Camilo T. · reseña de demostración</small></div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-bottom:60px">
+  <div class="news">
+    <div><p class="eyebrow">Círculo Glow</p><h2>Novedades en tu <i>correo</i></h2><p class="muted">Lanzamientos, rutinas y promociones. Puedes darte de baja cuando quieras.</p></div>
+    <form id="newsForm">
+      <div class="row"><input type="email" name="email" required placeholder="tu@correo.com"><button class="btn btn-p">Suscribirme</button></div>
+      <label class="check"><input type="checkbox" name="consent" required> Acepto recibir comunicaciones y la política de privacidad.</label>
+      <span id="newsMsg"></span>
+    </form>
+  </div>
+</section>
+
+<section class="sec wrap faq" id="faq" style="padding-top:20px">
+  <div class="sec-head"><div><p class="eyebrow">Ayuda</p><h2>Preguntas <i>frecuentes</i></h2></div></div>
+  <details open><summary>¿Los colores se ven igual que en la realidad?</summary><p>No siempre. Las muestras digitales son orientativas y cambian según la pantalla y la luz.</p></details>
+  <details><summary>¿Cómo funcionan los precios al por mayor?</summary><p>Cada producto tiene escalas (6, 12, 24+ unidades). En la tienda conectada al servidor, los precios se recalculan y validan en el servidor; nunca se confía en el precio enviado por el navegador.</p></details>
+  <details><summary>¿Puedo pagar en línea?</summary><p>El pedido se registra como “pendiente de pago”. El cobro real requiere conectar una pasarela (Wompi, Mercado Pago o Stripe). No almacenamos datos de tarjetas.</p></details>
+  <details><summary>¿Cuánto cuesta el envío?</summary><p>$12.000 en pedidos menores a $150.000; gratis desde $150.000 (valores de demostración configurables).</p></details>
+  <details><summary>¿Cambios y devoluciones?</summary><p>Productos sellados dentro de los 30 días siguientes a la entrega (política de ejemplo editable).</p></details>
+  <details><summary>¿Los productos son reales?</summary><p>No. Marcas, productos, precios e inventario son ficticios de demostración, listos para reemplazar por tu catálogo.</p></details>
+</section>
+</main>
+
+<footer>
+  <div class="wrap fgrid">
+    <div><a class="logo" href="#inicio" style="color:#fff"><span>g</span>glowlist</a><p style="font-size:13px">Maquillaje y cuidado capilar al detal y al por mayor.</p><div class="pay"><span>VISA</span><span>MASTERCARD</span><span>PSE</span><span>NEQUI</span></div></div>
+    <div><h4>Comprar</h4><a href="#catalogo" data-act="kind" data-kind="makeup">Maquillaje</a><a href="#catalogo" data-act="kind" data-kind="haircare">Cuidado capilar</a><a href="#tonos">Tonos</a><a href="#mayoristas">Por mayor</a></div>
+    <div><h4>Ayuda</h4><a href="#faq">Preguntas frecuentes</a><a href="#" data-act="policy" data-p="envios">Envíos y devoluciones</a><a href="#" data-act="policy" data-p="privacidad">Privacidad</a><a href="#" data-act="policy" data-p="terminos">Términos</a></div>
+    <div><h4>Contacto</h4><a href="mailto:hola@glowlist.demo">hola@glowlist.demo</a><a href="https://wa.me/570000000000" target="_blank" rel="noopener">WhatsApp (número de ejemplo)</a><a href="#">Instagram @glowlist.demo</a><p style="font-size:12px;opacity:.75">Los tonos en pantalla son orientativos.</p></div>
+  </div>
+  <div class="wrap fbot"><span>© <span id="year"></span> Glowlist Beauty Supply · Datos de demostración</span><span id="footerMode"></span></div>
+</footer>
+
+<div class="cmpbar" id="cmpbar"><span id="cmpText"></span><a class="btn btn-p btn-s" href="#comparar">Ver comparación</a></div>
+<div class="overlay" id="overlay" data-act="close-all"></div>
+
+<aside class="drawer" id="cartDrawer" aria-label="Carrito">
+  <div class="dhead"><h3 id="cartTitle">Tu carrito</h3><button class="x" data-act="close-all" aria-label="Cerrar">×</button></div>
+  <div class="dbody" id="cartBody"></div>
+  <div class="dfoot" id="cartFoot"></div>
+</aside>
+
+<aside class="drawer" id="sideDrawer" aria-label="Panel">
+  <div class="dhead"><h3 id="sideTitle"></h3><button class="x" data-act="close-all" aria-label="Cerrar">×</button></div>
+  <div class="dbody" id="sideBody"></div>
+</aside>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="mbox"><button class="x" data-act="close-all" aria-label="Cerrar">×</button><div id="modalBody"></div></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="maqui.js"></script>
+
+</script>
 </body>
 </html>
